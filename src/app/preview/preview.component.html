@@ -1,13 +1,12 @@
 <p>preview works!</p>
 
-<section #contentWrapper class="wrapper">
-    <ng-content></ng-content>
-</section>
-
 <header class="header">
-    <ng-content select="preview-pagination"></ng-content>
+    <ng-content select="paginator-carousel"></ng-content>
     <div class="actions">
         <ng-content select="preview-action"></ng-content>
     </div>
 </header>
 
+<section #contentWrapper class="wrapper">
+    <ng-content></ng-content>
+</section>
