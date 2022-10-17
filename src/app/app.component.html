@@ -1,1 +1,9 @@
 
+<app-preview>
+  <ng-container *ngIf="cats.length"; else fallback>
+    <img width="500" [src]="cats[activeCat]" />
+  </ng-container>
+  <ng-template #fallback>
+    No cats, no party...
+  </ng-template>
+</app-preview>
