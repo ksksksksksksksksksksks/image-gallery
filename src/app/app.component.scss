@@ -1,0 +1,19 @@
+.preview {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+button {
+    border: none;
+    height: 50px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+
+    &:hover {
+        background-color: rgb(219, 219, 219);
+    }
+}

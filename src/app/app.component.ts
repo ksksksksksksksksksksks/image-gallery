@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public activeCat = 0;
-  public cats: readonly string[] = [
-    'https://img3.goodfon.ru/wallpaper/nbig/b/4b/cat-kot-ryzhiy.jpg',
+  public cats: string[] = [
+    'https://images.wallpaperscraft.ru/image/single/kot_morda_vzglyad_pyatnistyj_104633_1280x960.jpg',
     'https://img4.goodfon.com/wallpaper/nbig/6/4a/kot-koshka-vzgliad-boke.jpg',
-    'https://foma.ru/wp-content/uploads/2016/02/8511091946_46c80bd3f5_k-e1454938833900-768x415.jpg'
+    'https://images.unsplash.com/photo-1626602411112-10742f9a3ab8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'
   ];
 }

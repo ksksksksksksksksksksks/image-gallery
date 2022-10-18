@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 
 export interface CarouselContext {
   $implicit: string;
@@ -8,13 +8,14 @@ export interface CarouselContext {
   };
 }
 
-@Component({
-  selector: 'paginator-carousel',
-  templateUrl: './paginator-carousel.component.html',
-  styleUrls: ['./paginator-carousel.component.scss']
+@Directive({
+  selector: '[appCarousel]'
 })
-export class PaginatorCarouselComponent implements OnInit {
-  public timerId: number | null = null;
+export class CarouselDirective implements OnInit {
+
+  // eslint-disable-next-line @angular-eslint/no-input-rename
+  @Input('appCarouselFrom') images!: string[];
+
   public context: CarouselContext | null = null;
   public index = 0;
 
@@ -22,34 +23,26 @@ export class PaginatorCarouselComponent implements OnInit {
     private templateRef: TemplateRef<CarouselContext>,
     private viewContainer: ViewContainerRef) { }
 
-  @Input('carouselFrom') images!: string[];
-
   ngOnInit() {
     this.context = {
       $implicit: this.images[0],
       controller: {
-        next: () => this.next(),
-        prev: () => this.prev()
+        next: () => this.getNext(),
+        prev: () => this.getPrevious()
       }
     };
 
     this.viewContainer.createEmbeddedView(this.templateRef, this.context);
   }
 
-  next() {
+  getNext() {
     this.index++;
-    if (this.index >= this.images.length) {
-      this.index = 0;
-    }
-
     (<CarouselContext>this.context).$implicit = this.images[this.index];
   }
 
-  prev() {
+  getPrevious() {
     this.index--;
-    if (this.index < 0) {
-      this.index = this.images.length - 1;
-    }
     (<CarouselContext>this.context).$implicit = this.images[this.index];
   }
+
 }
