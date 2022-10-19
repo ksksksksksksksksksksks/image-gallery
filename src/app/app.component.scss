@@ -1,19 +1,48 @@
+:host {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
 .preview {
-    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
+    
+    // justify-content: center;
 
-button {
-    border: none;
-    height: 50px;
-    margin: 0 10px 0 10px;
-    cursor: pointer;
-    background-color: rgb(231, 231, 231);
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
 
-    &:hover {
-        background-color: rgb(219, 219, 219);
+        .container-buttons {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        
+            button {
+                margin: 5px;
+            }
+        }
+    }
+
+    .paginator {
+        border: none;
+        height: 50px;
+        margin: 0 10px 0 10px;
+        cursor: pointer;
+        background-color: rgb(231, 231, 231);
+    
+        &:hover {
+            background-color: rgb(219, 219, 219);
+        }
     }
 }
+

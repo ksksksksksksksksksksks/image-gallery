@@ -8,8 +8,9 @@ import { PreviewComponent } from './preview/preview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { CarouselDirective } from './carousel.directive';
-import { ActionsComponent } from './actions/actions.component';
+import { LikesService } from './likes.service';
 
 
 @NgModule({
@@ -17,16 +18,16 @@ import { ActionsComponent } from './actions/actions.component';
     AppComponent,
     PreviewComponent,
     CarouselDirective,
-    ActionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [ LikesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
