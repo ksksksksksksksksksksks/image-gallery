@@ -1,27 +1,5 @@
 
-<app-preview>
-  <div *appCarousel="let cat from cats; let ctrl = controller" class="preview">
-    <button class="paginator" (click)="ctrl.prev()" [disabled]="cats.indexOf(cat) === 0">
-      <mat-icon>navigate_before</mat-icon>
-    </button>
-
-    <div class="card">
-      <div class="container-buttons">
-        <button (click)="openInFullScreen(cat)" mat-mini-fab color="white">
-            <mat-icon>zoom_out_map</mat-icon>
-        </button>
-        <button *ngIf="!isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button *ngIf="isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
-            <mat-icon color="warn">favorite</mat-icon>
-        </button>
-      </div>
-      <img [src]="cat" width="540" height="380"/>
-    </div>
-    
-    <button class="paginator" (click)="ctrl.next()" [disabled]="cats.indexOf(cat) === cats.length - 1">
-      <mat-icon>navigate_next</mat-icon>
-    </button>
-  </div>
+<app-preview [cat]="cats[activeCat]">
+    <app-paginator [lastIndex]="cats.length - 1" [(index)]="activeCat"></app-paginator>
+    <img [src]="cats[activeCat]" width="540" height="380"/>
 </app-preview>

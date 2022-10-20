@@ -1,0 +1,24 @@
+.preview {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .container-buttons {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+
+            button {
+                margin: 5px;
+            }
+        }
+    }
+}

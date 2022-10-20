@@ -1,10 +1,11 @@
-import { Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-full-screen',
   templateUrl: './full-screen.component.html',
-  styleUrls: ['./full-screen.component.scss']
+  styleUrls: ['./full-screen.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FullScreenComponent {
 

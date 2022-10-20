@@ -9,18 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CarouselDirective } from './carousel.directive';
 import { LikesService } from './likes.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FullScreenComponent } from './full-screen/full-screen.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PreviewComponent,
-    CarouselDirective,
     FullScreenComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,

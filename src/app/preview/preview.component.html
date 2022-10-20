@@ -1,9 +1,17 @@
-<!-- <header class="header">
-    <div class="actions">
-        <ng-content select="app-actions"></ng-content>
+<div class="preview">
+    <ng-content select="app-paginator"></ng-content>
+    <div class="card">
+        <div class="container-buttons">
+            <button (click)="openInFullScreen(cat)" mat-mini-fab color="white">
+                <mat-icon>zoom_out_map</mat-icon>
+            </button>
+            <button *ngIf="!isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button *ngIf="isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
+                <mat-icon color="warn">favorite</mat-icon>
+            </button>
+        </div>
+        <ng-content></ng-content>
     </div>
-</header> -->
-
-<div class="wrapper">
-    <ng-content></ng-content>
 </div>
