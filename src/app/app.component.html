@@ -1,5 +1,14 @@
 
-<app-preview [cat]="cats[activeCat]">
+<app-preview>
     <app-paginator [lastIndex]="cats.length - 1" [(index)]="activeCat"></app-paginator>
-    <img [src]="cats[activeCat]" width="540" height="380"/>
+    <img [src]="cats[activeCat]" width="540" height="380" />
+    <button class="preview-button" (click)="openInFullScreen(cats[activeCat])" mat-mini-fab color="white">
+        <mat-icon>zoom_out_map</mat-icon>
+    </button>
+    <button class="preview-button" *ngIf="!isLiked(cats[activeCat])" (click)="like(cats[activeCat])" mat-mini-fab color="white">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button class="preview-button" *ngIf="isLiked(cats[activeCat])" (click)="like(cats[activeCat])" mat-mini-fab color="white">
+        <mat-icon color="warn">favorite</mat-icon>
+    </button>
 </app-preview>

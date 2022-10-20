@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { FullScreenComponent } from './full-screen/full-screen.component';
+import { LikesService } from './likes.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,25 @@ export class AppComponent {
     'https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1114&q=80'
   ];
 
-  constructor() { }
+  constructor(public likesService: LikesService,
+    public matDialog: MatDialog) { }
+  
+  public isLiked(cat: string) {
+    return this.likesService.isLiked(cat);
+  }
+
+  public like(cat: string) {
+    this.likesService.toggle(cat);
+  }
+
+  public openInFullScreen(cat: string) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "full-screen";
+    dialogConfig.height = "window.screen.height";
+    dialogConfig.width = "window.screen.height";
+    dialogConfig.data = cat;
+    this.matDialog.open(FullScreenComponent, dialogConfig);
+  }
 
 }
