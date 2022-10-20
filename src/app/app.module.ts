@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CarouselDirective } from './carousel.directive';
 import { LikesService } from './likes.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FullScreenComponent } from './full-screen/full-screen.component';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { LikesService } from './likes.service';
     AppComponent,
     PreviewComponent,
     CarouselDirective,
+    FullScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { LikesService } from './likes.service';
     BrowserAnimationsModule,
     MatIconModule,
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [ LikesService ],
   bootstrap: [AppComponent]

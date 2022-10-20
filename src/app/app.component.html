@@ -7,8 +7,8 @@
 
     <div class="card">
       <div class="container-buttons">
-        <button (click)="fullScreen()" mat-mini-fab color="white">
-            <mat-icon >zoom_out_map</mat-icon>
+        <button (click)="openInFullScreen(cat)" mat-mini-fab color="white">
+            <mat-icon>zoom_out_map</mat-icon>
         </button>
         <button *ngIf="!isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
             <mat-icon>favorite</mat-icon>
@@ -16,7 +16,7 @@
         <button *ngIf="isLiked(cat)" (click)="like(cat)" mat-mini-fab color="white">
             <mat-icon color="warn">favorite</mat-icon>
         </button>
-    </div>
+      </div>
       <img [src]="cat" width="540" height="380"/>
     </div>
     
